@@ -136,7 +136,7 @@ class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
             'INDI:COMM:URL'  => new AddressWebPage(I18N::translate('URL')),
             'INDI:DATA'      => new EmptyElement(I18N::translate('Data'), ['TEXT' => '0:1']),
             'INDI:DATA:TEXT' => new SubmitterText(I18N::translate('Text')),
-            'INDI:_MARSM'     => new CustomElement(I18N::translate('Marriage Surname')),
+            'INDI:_MARSN'     => new CustomElement(I18N::translate('Marriage Surname')),
         ];
     }
 
