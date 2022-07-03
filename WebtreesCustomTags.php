@@ -150,7 +150,7 @@ class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
     {
         return [
             'FAM'       => [['DATA', '0:M']],
-            'INDI'      => [['_MTNG', '0:1'],
+            'INDI'      => [['_MTNG', '0:1']],
         ];
     }
 }
