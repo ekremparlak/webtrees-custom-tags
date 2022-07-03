@@ -106,7 +106,7 @@ class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
             case 'tr':
             case 'tr-TR':
                 return [
-                    'Marriage Name' => 'Evlilik Soyad',
+                    'Marriage Name' => 'Evlilik Soyadı',
                 ];
 
             default:
