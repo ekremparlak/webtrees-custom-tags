@@ -106,7 +106,7 @@ class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
             case 'tr':
             case 'tr-TR':
                 return [
-                    'Marriage Name' => 'Evlilik Adı',
+                    'Marriage Name' => 'Evlilik Soyad',
                 ];
 
             default:
@@ -136,10 +136,7 @@ class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
             'INDI:COMM:URL'  => new AddressWebPage(I18N::translate('URL')),
             'INDI:DATA'      => new EmptyElement(I18N::translate('Data'), ['TEXT' => '0:1']),
             'INDI:DATA:TEXT' => new SubmitterText(I18N::translate('Text')),
-            'INDI:_MARNM'     => new CustomElement(I18N::translate('Marriage Name')),
-            'SOUR:AUTH:NOTE' => new SubmitterText(I18N::translate('Note')),
-            'REPO:NAME:_HEB' => new NameOfRepository(I18N::translate('Hebrew name')),
-            'SOUR:TITL:_HEB' => new SourceDescriptiveTitle(I18N::translate('Hebrew title')),
+            'INDI:_MARSM'     => new CustomElement(I18N::translate('Marriage Surname')),
         ];
     }
 
@@ -150,7 +147,7 @@ class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
     {
         return [
             'FAM'       => [['DATA', '0:M']],
-            'INDI'      => [['_MARNM', '0:1']],
+            'INDI'      => [['_MARSN', '0:1']],
         ];
     }
 }
