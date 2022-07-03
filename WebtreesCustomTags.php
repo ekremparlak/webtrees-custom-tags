@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace ExampleNamespace;
+namespace CustomTagsNamespace;
 
 use Fisharebest\Webtrees\Elements\AddressWebPage;
 use Fisharebest\Webtrees\Elements\CustomElement;
@@ -28,7 +28,7 @@ use Fisharebest\Webtrees\Registry;
  *
  * Modules *must* implement ModuleCustomInterface.  They *may* also implement other interfaces.
  */
-class ExampleModuleCustomTags extends AbstractModule implements ModuleCustomInterface
+class WebtreesCustomTags extends AbstractModule implements ModuleCustomInterface
 {
     // For every module interface that is implemented, the corresponding trait *should* also use be used.
     use ModuleCustomTrait;
@@ -80,7 +80,7 @@ class ExampleModuleCustomTags extends AbstractModule implements ModuleCustomInte
      */
     public function customModuleLatestVersionUrl(): string
     {
-        return 'https://github.com/webtrees/example-module-custom-tags/raw/main/latest-version.txt';
+        return 'https://github.com/ekremparlak/webtrees-custom-tags/raw/main/latest-version.txt';
     }
 
     /**
@@ -90,7 +90,7 @@ class ExampleModuleCustomTags extends AbstractModule implements ModuleCustomInte
      */
     public function customModuleSupportUrl(): string
     {
-        return 'https://github.com/webtrees/example-module-custom-tags';
+        return 'https://github.com/ekremparlak/webtrees-custom-tags';
     }
 
     /**
@@ -103,10 +103,10 @@ class ExampleModuleCustomTags extends AbstractModule implements ModuleCustomInte
     public function customTranslations(string $language): array
     {
         switch ($language) {
-            case 'fr':
-            case 'fr-CA':
+            case 'tr':
+            case 'tr-TR':
                 return [
-                    'Mother tongue' => 'Langue maternelle',
+                    'Marriage Name' => 'Evlilik Adı',
                 ];
 
             default:
@@ -136,7 +136,7 @@ class ExampleModuleCustomTags extends AbstractModule implements ModuleCustomInte
             'INDI:COMM:URL'  => new AddressWebPage(I18N::translate('URL')),
             'INDI:DATA'      => new EmptyElement(I18N::translate('Data'), ['TEXT' => '0:1']),
             'INDI:DATA:TEXT' => new SubmitterText(I18N::translate('Text')),
-            'INDI:_MTNG'     => new CustomElement(I18N::translate('Mother tongue')),
+            'INDI:_MARNM'     => new CustomElement(I18N::translate('Marriage Name')),
             'SOUR:AUTH:NOTE' => new SubmitterText(I18N::translate('Note')),
             'REPO:NAME:_HEB' => new NameOfRepository(I18N::translate('Hebrew name')),
             'SOUR:TITL:_HEB' => new SourceDescriptiveTitle(I18N::translate('Hebrew title')),
@@ -150,9 +150,7 @@ class ExampleModuleCustomTags extends AbstractModule implements ModuleCustomInte
     {
         return [
             'FAM'       => [['DATA', '0:M']],
-            'INDI'      => [['_MTNG', '0:1'], ['COMM', '0:M'], ['DATA', '0:M']],
-            'REPO:NAME' => [['_HEB', '0:1']],
-            'SOUR:TITL' => [['_HEB', '0:1']],
+            'INDI'      => [['_MTNG', '0:1'],
         ];
     }
 }
